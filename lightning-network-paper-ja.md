@@ -7,7 +7,9 @@ Joseph Poon - joseph@lightning.network
 Thaddeus Dryja - rx@awsomnet.org
 January 14, 2016
 DRAFT Version 0.5.9.2
-```
+``` 
+
+[Original Paper](https://lightning.network/lightning-network-paper.pdf)
 
 ## Abstract
 
