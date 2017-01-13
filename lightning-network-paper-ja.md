@@ -163,11 +163,10 @@ SIGHASH_NOINPUTが存在しなければ、Bitcoinのトランザクションは�
 
 ### 3.3 Sequence Number Maturity
 
-Mark Freidenbachは、親トランザクションの相対ブロック成熟度（relative block maturity）によってシーケンス番号に強制力を持たせることを提案している。（これはソフトフォークで実現[12]）。
-これは、送金スクリプトの相対ブロック承認時間凍結（relative block confirmation time lock）の幾つかの形式を確認するための基本的な機能を提供する。
-加えて、追加のopcodeである”OP CHECKSEQUENCEVERIFY[13] (a.k.a. OP RELATIVECHECKLOCKTIMEVERIFY)[14]”は、さらなる能力を与える（柔軟なresolving transactionのより永続的なソリューションの前の、stop-gap solutionを可能にする？）
-
-この論文の将来バージョンでは、この提案法を含む予定である
+Mark Freidenbachは、ソフトフォーク[12]によって親トランザクションの相対ブロック満期（relative block maturity）を導入し、シーケンス番号に効力を持たせることを提案している。
+これにより、送金スクリプトの相対ブロック承認時間ロック（relative block confirmation time lock）の幾つかの形式を保証するための基本的な能力が得られる。
+さらに、`OP_CHECKSEQUENCEVERIFY`[13]（`OP_RELATIVECHECKLOCKTIMEVERIFY`としても知られる）[14]というオペコードを追加することで、トランザクションの可塑性（malleability）の恒久的な解決方法が実現するまでのつなぎ対応ができるなど、さらなる能力を得ることができる。
+この論文の将来のバージョンでは、解決方法の提案も含めるつもりである。
 
 かいつまんで言うと、Bitcoinはシーケンス番号（未承認トランザクションのmempool用の利用を想定）を持ってリリースされた。元々の振舞いは、mempool内のトランザクションの置換に使われていた。（より高いシーケンス番号を持ったトランザクションがあれば、それで置換）
 トランザクションの置換ルールのため、DoS攻撃リスクによる強制実行されることはない（？）
